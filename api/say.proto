@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "github.com/fallmor/say-gprc/api";
+package say;
+
+service TextToSpeech {
+    rpc say(Text) returns(Speech) {}
+}
+
+message Text {
+    string text = 1;
+}
+message Speech {
+    bytes Audio = 1;
+}
